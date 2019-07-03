@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eat some burgers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4 text-center">Eat-a-burger</h1>
+            <h3 class="display-9 text-center">or several</h3>
+            <hr class="my-4">
+            <div class="row">
+                <!-- append burgers in DB here -->
+                <div class="col-md-6" id="burgerStock">
+
+                </div>
+                <!-- append burgers eaten here -->
+                <div class="col-md-6" id="burgersEaten">
+
+                </div>
+            </div>
+            <hr class="my-4">
+            <form>
+                <div class="form-group">
+                    <label for="addBurger">Something not listed? Add it here:</label>
+                    <textarea class="form-control" id="addBurger" rows="2"></textarea>
+                    <button type="button" class="btn btn-primary mb-2">Add the burger!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</body>
+
+</html>
