@@ -10,4 +10,9 @@ module.exports = function (app) {
             res.json(dbPost);
         })
     })
+    app.get("/api/burgers", function (req, res) {
+        db.burgers.findAll({}).then(function (dbPost) {
+            res.json(dbPost)
+        })
+    })
 }
