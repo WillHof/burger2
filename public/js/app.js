@@ -1,17 +1,20 @@
 $(document).ready(function () {
     loadBurger()
     const burgerForm = $("#burgerForm")
+    //reloads on addburger
     function addBurger(burger) {
         $.post("/api/newBurger", burger, function () {
             window.location.href = "/"
         });
     }
+    //gets data from api route
     function loadBurger() {
         $.get("/api/burgers", function (data) {
             writeBurgers(data)
         }
         )
     }
+    //writes the data returned from the database to the page
     function writeBurgers(burgerData) {
         burgerData.forEach(function (element) {
             let newBurgerLine = `<div class="row">
@@ -47,6 +50,16 @@ $(document).ready(function () {
             addBurger(newBurger)
         }
     })
-
+    $(document).on("click", ".btn-danger", function (event) {
+        let bId = this.id
+        let eaten = true
+        let bUpdate = {
+            id: bId,
+            devoured: eaten
+        }
+        $.post(`/api/burgers:${bId}`, bUpdate, function () {
+            window.location.href = "/"
+        })
+    })
 
 });

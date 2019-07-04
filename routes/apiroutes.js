@@ -9,10 +9,19 @@ module.exports = function (app) {
         }).then(function (dbPost) {
             res.json(dbPost);
         })
-    })
+    });
     app.get("/api/burgers", function (req, res) {
         db.burgers.findAll({}).then(function (dbPost) {
             res.json(dbPost)
-        })
-    })
+        });
+    });
+    app.post("/api/burgers:id", function (req, res) {
+        db.burgers.update(req.body, {
+            where: {
+                id: req.body.id
+            }
+        }).then(function (dbPost) {
+            res.json(dbPost)
+        });
+    });
 }
