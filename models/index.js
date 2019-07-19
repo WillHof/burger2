@@ -6,7 +6,8 @@ const basename = path.basename(__filename);
 const env = process.env.JAWSDB_URL || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 console.log(config)
-const db = {};
+const db = {}
+console.log("nothing")
 
 let sequelize;
 if (config.use_env_variable) {
